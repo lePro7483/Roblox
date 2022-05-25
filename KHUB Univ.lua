@@ -1,8 +1,9 @@
 -- Made by StarLagging, also named lePro7483 before banned for scamming :D
 -- I use Orion lib by shlex, you can find it here : https://github.com/shlexware/Orion/blob/main/Documentation.md
+local ver = 0.2
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 OrionLib:MakeNotification({Name = "Loaded KHub Univ", Content = "If probs : DeadInside#5302", Image = "rbxassetid://0", Time = 7})
-local Window = OrionLib:MakeWindow({Name = "KHub Univ Gui v0.2 *Test*", HidePremium = true, SaveConfig = false, ConfigFolder = "N/A")
+local Window = OrionLib:MakeWindow({Name = "KHub Univ Gui "..ver.." *Test*", HidePremium = true, SaveConfig = false, ConfigFolder = "N/A")
 local LPTab = Window:MakeTab({Name = "LocalPlayer", Icon = "rbxassetid://9657052086", PremiumOnly = false})
 LPTab:AddLabel("*BETA* Some assets may change : DeadInside#5302")
 
