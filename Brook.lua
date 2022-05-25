@@ -1,5 +1,10 @@
-loadstring(game:HttpGet("https://paste.gg/p/anonymous/d3492bd620bd4c46b54680ac80b0fa0d/files/161ddd9c992c4ceba3c298458d45188a/raw", true))()
+print("We all lovin Trollin in the Bin while Robloxin")
+--loadstring(game:HttpGet("https://paste.gg/p/anonymous/d3492bd620bd4c46b54680ac80b0fa0d/files/161ddd9c992c4ceba3c298458d45188a/raw", true))()
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+
+if game.ReplicatedStorage:FindFirstChild("NoCarsRegions") then
+	game.ReplicatedStorage.NoCarsRegions:Destroy()
+end
 
 Config = { --Spy (/spy)
 	enabled = true,
