@@ -52,9 +52,9 @@ LPTab:AddButton({
   	end    
 })
 LPTab:AddButton({
-	Name = "ESP *WIP* (Using Sirius ESP Lib)",
+	Name = "ESP (Using Sirius ESP Lib)",
 	Callback = function()
-      	OrionLib:MakeNotification({Name = "Why? Just WHY?", Content = "Just said it was WIP...", Image = "rbxassetid://0", Time = 7})
+      	loadstring(game:HttpGet(('https://raw.githubusercontent.com/lePro7483/Roblox/main/KHUBESP.lua'),true))()
   	end    
 })
 
