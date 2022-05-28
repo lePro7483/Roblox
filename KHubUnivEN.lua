@@ -54,7 +54,7 @@ LPTab:AddButton({
 LPTab:AddButton({
 	Name = "ESP *WIP* (Using Sirius ESP Lib)",
 	Callback = function()
-      	https://raw.githubusercontent.com/lePro7483/Roblox/main/KHUBESP.lua
+      	loadstring(game:HttpGet(('https://raw.githubusercontent.com/lePro7483/Roblox/main/KHUBESP.lua'),true))()
   	end    
 })
 
