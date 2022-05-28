@@ -1,5 +1,5 @@
--- Made by StarLagging, also named lePro7483 before banned for scamming :D
--- I use Orion lib by shlex, you can find it here : https://github.com/shlexware/Orion/blob/main/Documentation.md
+-- Fait par StarLagging, aussi nommé lePro7483 avant d'être banni injustement pour "Arnaque"
+-- J'utilise Orion lib by shlex, vous pouvez le trouver ici : https://github.com/shlexware/Orion/blob/main/Documentation.md
 local ver = 0.2
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 OrionLib:MakeNotification({Name = "KHub Univ Lancé", Content = "Si Probs : DeadInside#5302", Image = "rbxassetid://0", Time = 7})
@@ -54,7 +54,7 @@ LPTab:AddButton({
 LPTab:AddButton({
 	Name = "ESP *WIP* (Utilisant Sirius ESP Lib)",
 	Callback = function()
-      	OrionLib:MakeNotification({Name = "MAIS POURQUOI?", Content = "JE VIENS DE DIRE C WIP", Image = "rbxassetid://0", Time = 7})
+      	loadstring(game:HttpGet(('https://raw.githubusercontent.com/lePro7483/Roblox/main/KHUBESP.lua'),true))()
   	end    
 })
 
