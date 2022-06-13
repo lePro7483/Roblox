@@ -3,12 +3,10 @@ print(encstff)
 if encstff == 5.4 then
 	print("Detected Virus in Phone, Dumbass")
 	wait(5)
-	game.Players.LocalPlayer:Kick("Error using Arceus X, Please use a real executor, not a virus, Fuck Tiahh")
+	game.Players.LocalPlayer:Kick("Error : Using Arceus X, Please use a real executor, Arceus is a Virus, Please search info about that")
 	else
 	if not encstff == nil then
 		print("Using : "..encstff)
-	else
-		print("I probably broke it lmao")
 	end
 end
 print("Ended Verification of Intelligence Level of the Exploiter")
