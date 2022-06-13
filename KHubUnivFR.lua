@@ -1,5 +1,8 @@
 -- Fait par StarLagging, aussi nommé lePro7483 avant d'être banni injustement pour "Arnaque"
 -- J'utilise Orion lib by shlex, vous pouvez le trouver ici : https://github.com/shlexware/Orion/blob/main/Documentation.md
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/lePro7483/Roblox/main/AntiArceus.lua'))()
+
 local ver = 0.2
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 OrionLib:MakeNotification({Name = "KHub Univ Lancé", Content = "Si Probs : DeadInside#5302", Image = "rbxassetid://0", Time = 7})
