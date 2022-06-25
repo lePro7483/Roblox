@@ -55,6 +55,9 @@ espLib.options = {
     tracerTransparency = 0.5,
     tracerColor = Color3.new(1, 1, 1),
     tracerOrigin = "Mouse", -- Available [Mouse, Top, Bottom]
+    chams = true,
+    chamsColor = Color3.new(1, 0, 0),
+    chamsTransparency = 0.5,
 }
 
 espLib.Init()
