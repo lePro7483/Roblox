@@ -1,1 +1,1 @@
-_G.BRem = game:GetService("ReplicatedStorage").Z.ZZ.ZZZ
+_G.BRem = game:GetService("ReplicatedStorage").ZZZ.ZZ.Z
