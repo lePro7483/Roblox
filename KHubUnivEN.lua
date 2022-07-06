@@ -2,6 +2,7 @@
 -- I use Orion lib by shlex, you can find it here : https://github.com/shlexware/Orion/blob/main/Documentation.md
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/lePro7483/Roblox/main/AntiArceus.lua'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/lePro7483/Roblox/main/Compatibility.lua'))()
 
 local ver = 0.2
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
