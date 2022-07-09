@@ -1,5 +1,5 @@
 local tab = game.ReplicatedStorage:GetChildren()
-local blacklist = {"NoCarsRegion","TempThemes","DefaultChatSystemChatEvents","PlayersStartup","SingleVehicles","MotelRegions","UiClone","ClonedTools","BannedLots","AvatarEditorScipts"}
+local blacklist = {"NoCarsRegions","TempThemes","DefaultChatSystemChatEvents","PlayersStartup","SingleVehicles","MotelRegions","UiClone","ClonedTools","BannedLots","AvatarEditorScipts"}
 function FindFolder()
 	for i,v in pairs(tab) do
 		if not table.find(blacklist,v.Name) then
