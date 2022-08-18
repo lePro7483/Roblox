@@ -1,4 +1,3 @@
--- loadstring(game:HttpGet("https://raw.githubusercontent.com/lePro7483/Roblox/main/FunnyStuff/Tests.lua"))()
 local isWorking = game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/lePro7483/Roblox/main/FunnyStuff/Funny.lua")
 repeat task.wait(.06) until game:IsLoaded()
 
