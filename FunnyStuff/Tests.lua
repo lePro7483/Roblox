@@ -1,11 +1,9 @@
 -- loadstring(game:HttpGet("https://raw.githubusercontent.com/lePro7483/Roblox/main/FunnyStuff/Tests.lua"))()
-local isWorking = false
-local UsingBeta = false
-
+local isWorking = game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/lePro7483/Roblox/main/FunnyStuff/Funny.lua")
 repeat task.wait(.06) until game:IsLoaded()
 
-if isWorking then
-	if not UsingBeta then
+if not isWorking == "FF" then
+	if isWorking == "TF" then
 		while true do end
 	else
 		while true do
