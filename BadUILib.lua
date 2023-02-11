@@ -2,7 +2,7 @@ local GUI = {}
 
 local Main,ColorMain
 
-function GUI.Main(NameOfGui,MainTextVal,MainDescVal,ColorGui,Static)
+function GUI.Main(NameOfGui,MainTextVal,MainDescVal,ColorGui)
 	ColorMain = ColorGui
 	Main = Instance.new("ScreenGui")
 	local Frame = Instance.new("Frame")
