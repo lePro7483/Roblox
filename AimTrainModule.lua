@@ -3,7 +3,9 @@ local mouse = nil
 _G.StarTrgBot = false
 
 function module.Init()
+    print("e")
     task.spawn(function() 
+        print("a")
         while task.wait() do
             if _G.StarTrgBot == true then
                 mouse = game:GetService("Players").LocalPlayer:GetMouse()
