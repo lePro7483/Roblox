@@ -1,21 +1,23 @@
 local GUI = {}
 
-local Main,ColorMain
+local Main,ColorMain,OldF,FinishButton
 
-function GUI.Main(NameOfGui,MainTextVal,MainDescVal,ColorGui)
-	ColorMain = ColorGui
+function GUI.Main(NameOfGui,MainTextVal,MainDescVal,ColorGui,Pos)
+	ColorMain = ColorGui or Color3.fromRGB(255, 37, 37)
 	Main = Instance.new("ScreenGui")
 	local Frame = Instance.new("Frame")
 	local ListLayout = Instance.new("UIListLayout")
 	local MainText = Instance.new("TextLabel")
 	local MainDesc = Instance.new("TextLabel")
+	local MainTextSec = Instance.new("NumberValue")
+	local MainDescSec = Instance.new("NumberValue")
 	Main.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	Main.Name = NameOfGui
 	Frame.Parent = Main
 	Frame.BackgroundColor3 = Color3.fromRGB(116, 116, 116)
 	Frame.BackgroundTransparency = 1.000
 	Frame.BorderSizePixel = 0
-	Frame.Position = UDim2.new(0.098867923, 0, 0.143607691, 0)
+	Frame.Position = Pos or UDim2.new(0.098867923, 0, 0.143607691, 0)
 	Frame.Size = UDim2.new(0, 260, 0, 290)
 	ListLayout.Name = "ListLayout"
 	ListLayout.Parent = Frame
@@ -26,9 +28,10 @@ function GUI.Main(NameOfGui,MainTextVal,MainDescVal,ColorGui)
 	MainText.BorderSizePixel = 0
 	MainText.Size = UDim2.new(0, 260, 0, 45)
 	MainText.Font = Enum.Font.SourceSansBold
-	MainText.Text = "Test"
 	MainText.TextColor3 = Color3.fromRGB(255, 255, 255)
 	MainText.TextSize = 24.000
+	MainTextSec.Parent = MainText
+	MainTextSec.Name = "UnDestroy"
 	MainDesc.Name = "MainDesc"
 	MainDesc.Parent = Frame
 	MainDesc.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -36,14 +39,41 @@ function GUI.Main(NameOfGui,MainTextVal,MainDescVal,ColorGui)
 	MainDesc.Position = UDim2.new(0, 0, 0.155172408, 0)
 	MainDesc.Size = UDim2.new(0, 260, 0, 30)
 	MainDesc.Font = Enum.Font.SourceSans
-	MainDesc.Text = "   Test"
 	MainDesc.TextColor3 = Color3.fromRGB(255, 255, 255)
 	MainDesc.TextSize = 14.000
 	MainDesc.TextXAlignment = Enum.TextXAlignment.Left
-	MainText.BackgroundColor3 = ColorGui
+	MainText.BackgroundColor3 = ColorGui or Color3.fromRGB(255, 37, 37)
 	MainText.Text = MainTextVal
 	MainDesc.Text = "   "..string.upper(MainDescVal)
+	MainDescSec.Parent = MainDesc
+	MainDesc.Name = "UnDestroy"
 	return Main
+end
+
+function GUI.NewPage()
+	for i,v in pairs(Main.Frame:GetChildren()) do
+		if not v:IsA("UIListLayout") and not v:FindFirstChild("UnDestroy") then
+			v:Destroy()
+		end
+	end
+end
+
+function GUI.Label(TextOfLabel,NameOfLabel)
+	local label = Instance.new("TextLabel")
+	label.Name = NameOfLabel
+	label.Parent = Main.Frame
+	label.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+	label.BackgroundTransparency = 0.400
+	label.BorderColor3 = Color3.fromRGB(48, 48, 48)
+	label.BorderSizePixel = 0
+	label.Position = UDim2.new(0, 0, 0.258620679, 0)
+	label.Size = UDim2.new(0, 260, 0, 35)
+	label.Font = Enum.Font.SourceSansBold
+	label.Text = "   "..TextOfLabel
+	label.TextColor3 = Color3.fromRGB(255, 255, 255)
+	label.TextSize = 16.000
+	label.TextXAlignment = Enum.TextXAlignment.Left
+	return label
 end
 
 function GUI.Button(TextOfButton,NameOfButton)
@@ -57,7 +87,6 @@ function GUI.Button(TextOfButton,NameOfButton)
 	Button.Size = UDim2.new(0, 260, 0, 35)
 	Button.Selected = true
 	Button.Font = Enum.Font.SourceSansBold
-	Button.Text = "   Button"
 	Button.TextColor3 = Color3.fromRGB(255, 255, 255)
 	Button.TextSize = 16.000
 	Button.TextXAlignment = Enum.TextXAlignment.Left
@@ -79,6 +108,7 @@ function GUI.ToggleChoice(TextOfButton,NameOfButton,Default)
 	ToggleButton.Position = UDim2.new(0.5, 0, 0.318965524, 0)
 	ToggleButton.Size = UDim2.new(0, 260, 0, 35)
 	ToggleButton.Selected = true
+	ToggleButton.Name = NameOfButton
 	ToggleButton.Font = Enum.Font.SourceSansBold
 	ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 	ToggleButton.TextSize = 16.000
@@ -291,8 +321,12 @@ function GUI.Tip(TextOfTip,NameOfTip,Plr)
 	return Tip
 end
 
-function GUI.Init(Plr,ScreenGui,TextOfButton)
-	local FinishButton = Instance.new("TextButton")
+function GUI.Init(Plr,TextOfButton,Callback)
+	local success = pcall(function() FinishButton.Parent = Main.Frame end)
+	if not success then
+		FinishButton = Instance.new("TextButton")
+		FinishButton.Parent = Main.Frame
+	end
 	FinishButton.Name = "FinishButton"
 	FinishButton.AnchorPoint = Vector2.new(0.5, 0.5)
 	FinishButton.BackgroundColor3 = Color3.fromRGB(255, 28, 28)
@@ -311,11 +345,12 @@ function GUI.Init(Plr,ScreenGui,TextOfButton)
 	Val.Name = "FinishVal"
 	Val.Value = false
 	Val.Parent = FinishButton
-	FinishButton.MouseButton1Click:Connect(function()
-		Val.Value = true
-	end)
-	FinishButton.Parent = Main.Frame
-	ScreenGui.Parent = Plr.PlayerGui
+	if OldF then
+		OldF:Disconnect()
+		OldF = nil
+	end
+	OldF = FinishButton.MouseButton1Click:Connect(Callback)
+	Main.Parent = Plr.PlayerGui
 end
 
 return GUI
