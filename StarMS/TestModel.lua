@@ -5,3 +5,5 @@ for i,v in pairs(parttarget:GetChildren()) do
 	  vb.Parent = game:GetService(v.Name)
   end
 end
+parttarget:Destroy()
+print("Star Models Setup : Done")
