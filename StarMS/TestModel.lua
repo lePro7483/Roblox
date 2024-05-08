@@ -6,4 +6,3 @@ for i,v in pairs(parttarget:GetChildren()) do
 end
 parttarget:Destroy()
 _G.StarMSmodel = nil
-print("Star Models Setup : Done")
