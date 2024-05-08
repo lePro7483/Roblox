@@ -1,4 +1,4 @@
-local parttarget = instancemodel
+local parttarget = StarMSmodel
 print(instancemodel)
 for i,v in pairs(parttarget:GetChildren()) do
   for ib,vb in pairs(v:GetChildren()) do
