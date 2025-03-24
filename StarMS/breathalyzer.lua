@@ -1,6 +1,5 @@
-local parttarget = _G.StarMSmodel
+local parttarget = _G.StarMSModel
 warn("Beginning extraction\n")
-print(parttarget:GetFullName())
 parttarget.BreathalyzerUI.Parent = game:GetService("StarterGui")
 parttarget.StarAlSystem.Parent = game:GetService("ServerScriptService")
 parttarget.Bottle.Parent = game:GetService("StarterPack")
@@ -10,7 +9,7 @@ for i,v in pairs(parttarget.TempFold:GetChildren()) do
   v.Parent = game:GetService("Lighting")
 end
 parttarget:Destroy()
-_G.StarMSmodel = nil
+_G.StarMSModel = nil
 
 print()
 warn("------------------------------")
