@@ -1,5 +1,6 @@
 local parttarget = _G.StarMSmodel
 warn("Beginning extraction\n")
+print(parttarget:GetFullName())
 parttarget.Breathalyzer.Parent = game:GetService("StarterGui")
 parttarget.StarAlSystem.Parent = game:GetService("ServerScriptService")
 parttarget.Bottle.Parent = game:GetService("StarterPack")
